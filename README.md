@@ -1,33 +1,29 @@
-# Field Service Management Platform
+# Field-Service Mobile Engineering — WorkPilot
+Flutter field workflows backed by a service-business and compliance platform.
 
-Job scheduling and technician tracking platform for field service dispatch teams.
+## My ownership
+Sole/lead engineering ownership across mobile and backend workflows, including jobs, reports, technical notes, media submissions and compliance workflows.
 
-**Role:** Full-Stack Developer · **Timeline:** 2025 · [Architecture](./ARCHITECTURE.md) · [Changelog](./CHANGELOG.md)
+## The mobile problem
+Field teams must be able to capture work when a connection is unavailable, understand what remains unsynchronized and recover when an API rejects a submission.
 
-## Problem
-Dispatch teams needed a way to schedule jobs, assign technicians, and track work orders in real time instead of juggling spreadsheets and phone calls.
+## Implementation
+- Persist queued operations locally so pending submissions survive application restarts.
+- Process job-status changes, reports, notes and media submissions in order.
+- Expose pending counts, processing status, retry controls and blocking errors in the interface.
+- Store large JSON payloads in application-support files rather than keeping every payload inline.
+- Resume queue processing on initialization when online.
+- Connect field workflows to the backend rather than treating mobile as an isolated interface.
 
-## Solution
-A web dashboard for dispatchers plus a Flutter mobile app for field technicians, synchronized in real time.
+This implementation does not claim exactly-once delivery or server-side idempotency guarantees.
 
-## What it includes
-- Dispatcher dashboard — job creation, technician assignment, schedule management, status tracking
-- Technician mobile app — assigned jobs, status updates, signatures, photo capture, time logging
+## Product and stack
+[WorkPilot](https://work-pilot.co) · Flutter/Dart · GetX · Dio · GetStorage · local file persistence · REST API integration
 
-See [ARCHITECTURE.md](./ARCHITECTURE.md) for system diagrams and [docs/](./docs) for further detail.
+## What this demonstrates
+Mobile/backend systems thinking, explicit failure and recovery states, and independent ownership of a field-service product.
 
-## Results
-- Built a field service platform with job scheduling and technician tracking
-- Real-time status sync between field staff and dispatchers
+## Evidence and confidentiality
+Descriptive case study only; proprietary client source is not included. Existing screenshots are generic mockups, not verified production screenshots. Usage figures and measured business outcomes are not asserted.
 
-## Tech stack
-**Mobile:** Flutter  
-**Backend:** Node.js, Express  
-**Database:** PostgreSQL / MongoDB  
-**Real-time:** Socket.IO
-
-## Screenshots
-See [screenshots/](./screenshots) — generic layout mockups (no real client branding/data reproduced).
-
----
-*Case study only. Client identity anonymized for confidentiality; no proprietary source code included.* See [LICENSE](./LICENSE).
+[Portfolio](https://mehtadarshil.site) · [Profile](https://github.com/mehtadarshil)
