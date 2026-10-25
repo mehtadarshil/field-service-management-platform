@@ -2,6 +2,8 @@
 Flutter field workflows backed by a service-business and compliance platform.
 
 ## My ownership
+**Affiliation: Valmont Security.** WorkPilot is part of my work under Valmont, separate from my earlier Synccipher employment.
+
 Sole/lead engineering ownership across mobile and backend workflows, including jobs, reports, technical notes, media submissions and compliance workflows.
 
 ## The mobile problem
